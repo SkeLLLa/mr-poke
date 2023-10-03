@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "env": {
+        "LOG_PERTTY_PRINT": "true",
+        "NODE_ENV": "development",
+      },
+      // "runtimeArgs": ["--preserve-symlinks"],
+      "args": ["-r source-map-support/register"],
+      "request": "launch",
+      "name": "Launch server",
+      "skipFiles": ["<node_internals>/**"],
+      "preLaunchTask": "tsc: build - tsconfig.prod.json",
+      "program": "${workspaceFolder}/src/bin/server.ts",
+      "outputCapture": "std",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    },
+    {
+      "name": "vscode-jest-tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": ["--inspect-brk", "${workspaceRoot}/node_modules/jest/bin/jest.js", "--runInBand"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ],
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0"
+}

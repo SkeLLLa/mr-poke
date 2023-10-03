@@ -1,0 +1,8 @@
+dist/
+build/
+coverage/
+static/
+node_modules/
+**/*.conf
+**/*.min.*
+deploy/chart
