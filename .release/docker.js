@@ -3,8 +3,8 @@ module.exports = [
   {
     // dockerTags: ['{{version}}', '{{major}}-latest'],
     dockerRegistry: 'ghcr.io',
-    dockerProject: 'SkeLLLa',
-    dockerCacheFrom: 'SkeLLLa/mr-poke',
+    dockerProject: 'skellla',
+    dockerCacheFrom: 'skellla/mr-poke',
     dockerLogin: false,
     dockerArgs: {
       RELEASE_DATE: new Date().toISOString(),
