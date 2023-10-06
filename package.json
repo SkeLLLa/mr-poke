@@ -103,6 +103,7 @@
     "prettier-plugin-prisma": "^5.0.0",
     "prisma": "^5.4.1",
     "prisma-erd-generator": "^1.11.1",
+    "semantic-release": "^22.0.5",
     "semantic-release-helm3": "^2.9.3",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2"

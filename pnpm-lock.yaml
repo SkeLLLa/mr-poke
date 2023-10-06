@@ -157,6 +157,9 @@ devDependencies:
   prisma-erd-generator:
     specifier: ^1.11.1
     version: 1.11.1(@prisma/client@5.4.1)(typescript@5.2.2)
+  semantic-release:
+    specifier: ^22.0.5
+    version: 22.0.5(typescript@5.2.2)
   semantic-release-helm3:
     specifier: ^2.9.3
     version: 2.9.3
