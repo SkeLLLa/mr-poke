@@ -10,6 +10,7 @@ module.exports = [
       RELEASE_DATE: new Date().toISOString(),
       RELEASE_VERSION: '{{next.version}}',
       GITHUB_TOKEN: null,
+      NPM_TOKEN: null,
     },
   },
 ];
