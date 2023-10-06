@@ -1,5 +1,9 @@
 name: release
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
 on:
   push:
     branches:
@@ -94,9 +98,14 @@ jobs:
         run: pnpm install
       - name: Build
         run: pnpm build
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Semantic Release
         run: pnpm run release
         env:
-          DOCKER_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
