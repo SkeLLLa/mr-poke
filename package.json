@@ -1,8 +1,14 @@
 {
   "name": "mr-poke",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "Self-hosted service for slack gitlab notifications.",
+  "keywords": [
+    "gitlab",
+    "slack",
+    "notification",
+    "merge request",
+    "axolo"
+  ],
   "homepage": "https://github.com/SkeLLLa/mr-poke#readme",
   "bugs": {
     "url": "https://github.com/SkeLLLa/mr-poke/issues"
