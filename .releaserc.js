@@ -7,6 +7,7 @@ module.exports = {
     require('./.release/npm-change-version'),
     require('./.release/docker'),
     require('./.release/helm'),
+    require('./.release/git'),
     require('./.release/github-release'),
   ],
 };
