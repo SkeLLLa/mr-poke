@@ -1,6 +1,6 @@
 module.exports = [
   '@semantic-release/git',
   {
-    assets: ['deploy', 'docs', 'package.json', 'pnpm-lock.yaml'],
+    assets: ['helm/chart', 'docs', 'package.json', 'pnpm-lock.yaml'],
   },
 ];
