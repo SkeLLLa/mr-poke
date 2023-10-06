@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+  // previewFeatures = ["tracing"]
+}
+
+generator erd {
+  provider = "prisma-erd-generator"
+  theme    = "dark"
+  output   = "../docs/DATABASE.md"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  // Created date
+  createdAt DateTime @default(now()) @map("created_at")
+  // Update date
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
+  // User timezone, got from slack
+  timezone String @default("UTC") 
+  // Timezone offset
+  timezoneOffset Int @default(0)
+  // Locale
+  locale String @default("en-US")
+
+  slackUser SlackUser?
+  gitlabUser GitlabUser?
+  emails UserMail[]
+
+  @@map("user")
+}
+
+model SlackUser {
+  id String @id
+  userId Int @unique @map("user_id")
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("slack_user")
+}
+
+model GitlabUser {
+  id Int @id
+  userId Int @unique @map("user_id")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("gitlab_user")
+}
+
+model UserMail {
+  id Int @id @default(autoincrement())
+  userId Int @map("user_id")
+  email String
+  domain String
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([domain])
+  @@index([email])
+  @@unique([userId, email])
+
+  @@map("user_email")
+}

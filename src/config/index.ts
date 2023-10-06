@@ -2,9 +2,12 @@ import { fastifyOauth2, type FastifyOAuth2Options } from '@fastify/oauth2';
 import * as dotenv from 'dotenv';
 import type { FastifyServerOptions } from 'fastify';
 import type { PinoLoggerOptions } from 'fastify/types/logger';
+import type { LevelWithSilent } from 'pino';
 import { boolean, newConfig, number, string } from 'ts-app-env';
 import type { IGitlabServiceOptions } from '../app/services/gitlab/gitlab.service';
+import type { IReminderServiceOptions } from '../app/services/reminder/reminder.service';
 import type { ISlackServiceOptions } from '../app/services/slack/slack.service';
+import type { IUsersServiceOptions } from '../app/services/users/users.service';
 
 dotenv.config();
 
@@ -64,21 +67,13 @@ const server = {
         env: 'LOG_LEVEL',
         default: 'info',
       }),
-      ...(env === Environments.DEVELOPMENT
+      ...((env as Environments) === Environments.DEVELOPMENT
         ? {
             transport: {
               target: 'pino-pretty',
             },
           }
         : {}),
-      // transport: boolean({
-      //   env: 'LOG_PERTTY_PRINT',
-      //   notNeededIn: [Environments.TESTING, Environments.STAGING, Environments.PRODUCTION],
-      // })
-      //   ? {
-      //       target: 'pino-pretty',
-      //     }
-      //   : undefined,
     } as PinoLoggerOptions,
   } as FastifyServerOptions,
 };
@@ -88,9 +83,45 @@ const api = {
     env: 'OAUTH2_CALLBACK_ROUTE',
     default: '/login/gitlab/callback',
   }),
+  gitlabHookRoute: string({
+    env: 'GL_HOOK_ROUTE',
+    default: '/hooks/gitlab',
+  }),
 };
 
 const plugins = {
+  k8sProbes: {
+    livenessURL: string({
+      env: 'LIVENESS_PROBE_PATH',
+      default: '/__alive__',
+    }),
+    readinessURL: string({
+      env: 'READINESS_PROBE_PATH',
+      default: '/__ready__',
+    }),
+    logLevel: string({
+      env: 'PROBE_LOG_LEVEL',
+      default: 'error',
+    }),
+  } as { logLevel: LevelWithSilent; readinessURL: string; livenessURL: string },
+  prisma: {
+    url: string({
+      env: 'DATABASE_URL',
+    }),
+    pgbouncer: boolean({
+      env: 'PG_BOUNCER_ENABLED',
+      default: false,
+    }),
+    sslmode: string({
+      env: 'PG_SSL_MODE',
+      default: 'require',
+    }),
+  },
+  gitlab: {
+    token: string({
+      env: 'GL_HOOK_TOKEN',
+    }),
+  },
   oauth2: {
     name: 'gitlabOAuth2',
     credentials: {
@@ -136,7 +167,13 @@ const services = {
       env: 'SLACK_API_URL',
       optional: true,
     }),
+    emailDomains: string({
+      env: 'SLACK_EMAIL_DOMAINS',
+      optional: true,
+    }),
   } as ISlackServiceOptions,
+  users: {} as IUsersServiceOptions,
+  reminder: {} as IReminderServiceOptions,
 };
 
 const configuration = {

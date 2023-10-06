@@ -3,7 +3,7 @@ import { config, Environments } from '../config';
 
 const options: LoggerOptions = {
   level: (config.server.options.logger as LoggerOptions).level ?? 'info',
-  ...(config.env === Environments.DEVELOPMENT
+  ...((config.env as Environments) === Environments.DEVELOPMENT
     ? {
         transport: {
           target: 'pino-pretty',

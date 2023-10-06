@@ -3,15 +3,34 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
+  "homepage": "https://github.com/SkeLLLa/mr-poke#readme",
+  "bugs": {
+    "url": "https://github.com/SkeLLLa/mr-poke/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SkeLLLa/mr-poke.git"
+  },
   "license": "MIT",
   "author": "m03geek",
-  "main": "index.js",
+  "main": "src/index.ts",
+  "directories": {
+    "lib": "dist",
+    "doc": "docs",
+    "test": "test"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.ts",
+    "dist/**/*.map"
+  ],
   "scripts": {
-    "build": "pnpm run build:node && pnpm run build:copy",
+    "build": "pnpm run build:db && pnpm run build:node && pnpm run build:copy",
     "build:clean": "rm -rf dist",
     "build:copy": "exit 0",
+    "build:db": "prisma generate",
     "build:node": "tsc -p tsconfig.prod.json",
-    "lint": "pnpm run lint:types && pnpm run lint:codestyle && pnpm run lint:packages",
+    "lint": "pnpm run build:db && pnpm run lint:types && pnpm run lint:codestyle && pnpm run lint:packages",
     "lint:codestyle": "eslint . --ext js,jsx,ts,tsx",
     "lint:packages": "pnpm audit --prod --audit-level=high",
     "lint:types": "tsc -p tsconfig.json",
@@ -20,39 +39,84 @@
     "migrate:production": "prisma migrate deploy",
     "migrate:reset": "prisma migrate reset",
     "pino:pretty": "pino-pretty -i pid,hostname -t 'SYS:standard'",
-    "poc": "tsx src/playground.ts",
+    "poc": "tsx src/playground.xxx.ts",
+    "release": "semantic-release",
     "start": "pnpm run build && node dist/bin/server.js",
     "start:dev": "tsx watch --inspect src/bin/server.ts | pnpm run pino:pretty",
-    "test": "pnpm run build && pnpm run lint && pnpm run test:unit",
-    "test:unit": "jest --passWithNoTests"
+    "test": "pnpm run build && pnpm run lint"
   },
   "dependencies": {
+    "@fastify/auth": "^4.3.0",
     "@fastify/autoload": "^5.7.1",
     "@fastify/cookie": "^9.1.0",
     "@fastify/error": "^3.4.0",
-    "@fastify/oauth2": "^7.4.0",
-    "@gitbeaker/rest": "^39.16.0",
+    "@fastify/oauth2": "^7.5.0",
+    "@fastify/type-provider-typebox": "^3.5.0",
+    "@gitbeaker/rest": "^39.18.0",
+    "@prisma/client": "^5.4.1",
+    "@sinclair/typebox": "^0.31.17",
     "@slack/web-api": "^6.9.0",
+    "arecibo": "^2.2.2",
     "dotenv": "^16.3.1",
     "fastify": "^4.23.2",
     "fastify-plugin": "^4.5.1",
     "http-status-codes": "^2.3.0",
+    "i18next": "^23.5.1",
     "luxon": "^3.4.3",
-    "pino": "^8.15.3",
+    "pino": "^8.15.6",
     "source-map-support": "^0.5.21",
     "ts-app-env": "^1.5.0"
   },
   "devDependencies": {
+    "@codedependant/semantic-release-docker": "^4.4.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
+    "@mermaid-js/mermaid-cli": "^10.4.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^11.0.0",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.1",
+    "@semantic-release/npm": "^11.0.0",
+    "@semantic-release/release-notes-generator": "^12.0.0",
     "@tsconfig/node-lts": "^18.12.5",
     "@tsconfig/strictest": "^2.0.2",
     "@types/luxon": "^3.3.2",
-    "@types/node": "^20.6.3",
-    "pino-pretty": "^10.2.0",
+    "@types/node": "^20.8.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "conventional-changelog-conventionalcommits": "^7.0.2",
+    "eslint": "^8.50.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-tsdoc": "^0.2.17",
+    "pino-pretty": "^10.2.3",
     "prettier": "^3.0.3",
+    "prettier-plugin-jsdoc": "^1.0.5",
     "prettier-plugin-packagejson": "^2.4.6",
     "prettier-plugin-prisma": "^5.0.0",
+    "prisma": "^5.4.1",
+    "prisma-erd-generator": "^1.11.1",
+    "semantic-release-helm3": "^2.9.3",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "publishConfig": {
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  },
+  "pnpm": {
+    "neverBuiltDependencies": [
+      "puppeteer"
+    ],
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "puppeteer"
+      ]
+    }
   }
 }

@@ -8,8 +8,8 @@ void (async () => {
   }
 
   function sigHandler(code?: number): void {
-    const timeout = new Promise((resolve) => setTimeout(resolve, 2 * 60 * 1000))
-    return Promise.race([shutdown(),timeout])
+    const timeout = new Promise((resolve) => setTimeout(resolve, 2 * 60 * 1000));
+    return Promise.race([shutdown(), timeout])
       .then(() => {
         process.exit(code || 0);
       })

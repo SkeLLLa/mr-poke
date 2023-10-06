@@ -1,0 +1,56 @@
+replicaCount: 1
+namespace: ''
+image:
+  repository: ''
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ''
+
+nameOverride: ''
+fullnameOverride: ''
+
+env: {}
+
+serviceAccount:
+  create: false
+  annotations: {}
+  name: ''
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: ''
+  annotations: {}
+  hosts: []
+  tls: []
+
+resources: {}
+
+autoscaling:
+  enabled: false
+  minReplicas: 2
+  maxReplicas: 3
+  targetAverageCPUValue: 500m
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+serviceMonitor:
+  enabled: false
+  labels:
+    prometheus: monitoring
+    release: prometheus
+  interval: 1m
+  scrapeTimeout: 30s
