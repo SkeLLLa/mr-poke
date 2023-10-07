@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/SkeLLLa/mr-poke/compare/v1.0.14...v1.1.0) (2023-10-07)
+
+
+### 🚀 Features
+
+* add migration run on startup ([001f885](https://github.com/SkeLLLa/mr-poke/commit/001f8852021c69cd442d3646709c8755dd7bd232))
+
 ## [1.0.14](https://github.com/SkeLLLa/mr-poke/compare/v1.0.13...v1.0.14) (2023-10-07)
 
 
