@@ -9,8 +9,15 @@ image:
 nameOverride: ''
 fullnameOverride: ''
 
-env: {}
-
+env:
+  DATABASE_URL: ''
+  GL_HOOK_TOKEN: ''
+  GL_CLIENT_ID: ''
+  GL_CLIENT_SECRET: ''
+  OAUTH2_CALLBACK_URI: ''
+  GL_ACCESS_TOKEN: ''
+  SLACK_TOKEN: ''
+  
 serviceAccount:
   create: false
   annotations: {}
