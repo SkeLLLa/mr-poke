@@ -1,3 +1,10 @@
+## [1.0.14](https://github.com/SkeLLLa/mr-poke/compare/v1.0.13...v1.0.14) (2023-10-07)
+
+
+### 🛠 Fixes
+
+* use same node version ([a5441d1](https://github.com/SkeLLLa/mr-poke/commit/a5441d1a9f96895e15eab3c28245b17716632a11))
+
 ## [1.0.13](https://github.com/SkeLLLa/mr-poke/compare/v1.0.12...v1.0.13) (2023-10-07)
 
 
