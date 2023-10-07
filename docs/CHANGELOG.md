@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/SkeLLLa/mr-poke/compare/v1.0.11...v1.0.12) (2023-10-07)
+
+
+### 🛠 Fixes
+
+* ingress defaults ([72923ad](https://github.com/SkeLLLa/mr-poke/commit/72923ad965a48fa4dbdb65484aa995728534be4d))
+
 ## [1.0.11](https://github.com/SkeLLLa/mr-poke/compare/v1.0.10...v1.0.11) (2023-10-07)
 
 
