@@ -1,13 +1,13 @@
 replicaCount: 1
-namespace: ''
+namespace: 'default'
 image:
-  repository: ''
+  repository: 'ghcr.io/skellla/mr-poke'
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ''
+  # tag: ''
 
-nameOverride: ''
-fullnameOverride: ''
+# nameOverride: ''
+# fullnameOverride: ''
 
 env:
   DATABASE_URL: ''
@@ -17,7 +17,7 @@ env:
   OAUTH2_CALLBACK_URI: ''
   GL_ACCESS_TOKEN: ''
   SLACK_TOKEN: ''
-  
+
 serviceAccount:
   create: false
   annotations: {}
