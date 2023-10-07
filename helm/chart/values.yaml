@@ -20,8 +20,6 @@ env:
 
 serviceAccount:
   create: false
-  annotations: {}
-  name: ''
 
 podAnnotations: {}
 
@@ -35,10 +33,6 @@ service:
 
 ingress:
   enabled: false
-  className: ''
-  annotations: {}
-  hosts: []
-  tls: []
 
 resources: {}
 
