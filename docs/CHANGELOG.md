@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/SkeLLLa/mr-poke/compare/v1.0.10...v1.0.11) (2023-10-07)
+
+
+### 🛠 Fixes
+
+* helm defaults ([05f1848](https://github.com/SkeLLLa/mr-poke/commit/05f1848a195e1482707b620b021d48838d22f736))
+
 ## [1.0.10](https://github.com/SkeLLLa/mr-poke/compare/v1.0.9...v1.0.10) (2023-10-07)
 
 
