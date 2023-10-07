@@ -24,7 +24,7 @@ export async function start(): Promise<void> {
   await app.register(fastifyAuth);
   await app.register(fastifyOauth2, {
     ...config.plugins.oauth2,
-    scope: ['api', 'read_api', 'read_user', 'read_repository', 'openid', 'profile', 'email'],
+    scope: ['read_user', 'openid', 'profile', 'email'],
   });
 
   await app.register(fastifyAutoload, {
