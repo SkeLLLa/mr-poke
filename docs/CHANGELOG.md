@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/SkeLLLa/mr-poke/compare/v1.1.2...v1.1.3) (2023-10-07)
+
+
+### 🛠 Fixes
+
+* better k8s probes ([b6afb0a](https://github.com/SkeLLLa/mr-poke/commit/b6afb0a3520c0ef642de48257b91421a938f4822))
+
 ## [1.1.2](https://github.com/SkeLLLa/mr-poke/compare/v1.1.1...v1.1.2) (2023-10-07)
 
 
