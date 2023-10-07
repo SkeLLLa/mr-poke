@@ -38,9 +38,6 @@ dependencies:
   '@slack/web-api':
     specifier: ^6.9.0
     version: 6.9.0
-  arecibo:
-    specifier: ^2.2.2
-    version: 2.2.2
   dotenv:
     specifier: ^16.3.1
     version: 16.3.1
@@ -1620,14 +1617,6 @@ packages:
 
   /archy@1.0.0:
     resolution: {integrity: sha512-Xg+9RwCg/0p32teKdGMPTPnVXKD0w3DfHnFTficozsAgsvq2XenPJq/MYpzzQ/v8zrOyJn6Ds39VA4JIDwFfqw==}
-    dev: false
-
-  /arecibo@2.2.2:
-    resolution: {integrity: sha512-jLNMmN5e+zZfQ+Te0aMztZLssOaUMUm067GpWBPrdRIIKmQ3ylwExqjmmEoKwyp1LBzqDhB4RDqCWOjb/pzRjQ==}
-    engines: {node: '>=18.0.0'}
-    requiresBuild: true
-    dependencies:
-      fastify-plugin: 4.5.1
     dev: false
 
   /argparse@2.0.1:

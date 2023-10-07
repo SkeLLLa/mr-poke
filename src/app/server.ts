@@ -3,7 +3,6 @@ import { fastifyAuth } from '@fastify/auth';
 import { fastifyAutoload } from '@fastify/autoload';
 import { fastifyCookie } from '@fastify/cookie';
 import { fastifyOauth2, type OAuth2Namespace } from '@fastify/oauth2';
-import fastifyK8sProbes from 'arecibo';
 import fastifyApp from 'fastify';
 import { config } from '../config';
 import type { ICallbackPluginOptions } from './api/oauth/callback';
@@ -21,7 +20,6 @@ declare module 'fastify' {
 }
 
 export async function start(): Promise<void> {
-  await app.register(fastifyK8sProbes, config.plugins.k8sProbes);
   await app.register(fastifyCookie);
   await app.register(fastifyAuth);
   await app.register(fastifyOauth2, {

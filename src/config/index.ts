@@ -2,7 +2,6 @@ import { fastifyOauth2, type FastifyOAuth2Options } from '@fastify/oauth2';
 import * as dotenv from 'dotenv';
 import type { FastifyServerOptions } from 'fastify';
 import type { PinoLoggerOptions } from 'fastify/types/logger';
-import type { LevelWithSilent } from 'pino';
 import { boolean, newConfig, number, string } from 'ts-app-env';
 import type { IGitlabServiceOptions } from '../app/services/gitlab/gitlab.service';
 import type { IReminderServiceOptions } from '../app/services/reminder/reminder.service';
@@ -35,7 +34,7 @@ const { env, name } = newConfig(
 const server = {
   port: number({
     env: 'SERVER_PORT',
-    default: 3000,
+    default: 80,
   }),
   host: string({
     env: 'SERVER_HOST',
@@ -90,20 +89,20 @@ const api = {
 };
 
 const plugins = {
-  k8sProbes: {
-    livenessURL: string({
-      env: 'LIVENESS_PROBE_PATH',
-      default: '/__alive__',
-    }),
-    readinessURL: string({
-      env: 'READINESS_PROBE_PATH',
-      default: '/__ready__',
-    }),
-    logLevel: string({
-      env: 'PROBE_LOG_LEVEL',
-      default: 'error',
-    }),
-  } as { logLevel: LevelWithSilent; readinessURL: string; livenessURL: string },
+  // k8sProbes: {
+  //   livenessURL: string({
+  //     env: 'LIVENESS_PROBE_PATH',
+  //     default: '/__alive__',
+  //   }),
+  //   readinessURL: string({
+  //     env: 'READINESS_PROBE_PATH',
+  //     default: '/__ready__',
+  //   }),
+  //   logLevel: string({
+  //     env: 'PROBE_LOG_LEVEL',
+  //     default: 'error',
+  //   }),
+  // } as { logLevel: LevelWithSilent; readinessURL: string; livenessURL: string },
   prisma: {
     url: string({
       env: 'DATABASE_URL',
