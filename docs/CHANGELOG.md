@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/SkeLLLa/mr-poke/compare/v1.1.3...v1.1.4) (2023-10-07)
+
+
+### 🛠 Fixes
+
+* remove unneeded scopes ([1be9ffd](https://github.com/SkeLLLa/mr-poke/commit/1be9ffdff1a6e3c0cc4d9116810adeb711571747))
+
 ## [1.1.3](https://github.com/SkeLLLa/mr-poke/compare/v1.1.2...v1.1.3) (2023-10-07)
 
 
