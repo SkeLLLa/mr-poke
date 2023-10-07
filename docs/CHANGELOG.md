@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/SkeLLLa/mr-poke/compare/v1.1.1...v1.1.2) (2023-10-07)
+
+
+### 🛠 Fixes
+
+* service port ([b1652b5](https://github.com/SkeLLLa/mr-poke/commit/b1652b5b4dd2de6e872afb3c822dbe0941394bb2))
+
 ## [1.1.1](https://github.com/SkeLLLa/mr-poke/compare/v1.1.0...v1.1.1) (2023-10-07)
 
 
