@@ -62,6 +62,9 @@ dependencies:
   pino:
     specifier: ^8.15.6
     version: 8.15.6
+  prisma:
+    specifier: ^5.4.1
+    version: 5.4.1
   source-map-support:
     specifier: ^0.5.21
     version: 0.5.21
@@ -151,9 +154,6 @@ devDependencies:
   prettier-plugin-prisma:
     specifier: ^5.0.0
     version: 5.0.0(prettier@3.0.3)
-  prisma:
-    specifier: ^5.4.1
-    version: 5.4.1
   prisma-erd-generator:
     specifier: ^1.11.1
     version: 1.11.1(@prisma/client@5.4.1)(typescript@5.2.2)

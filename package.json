@@ -49,6 +49,7 @@
     "release": "semantic-release",
     "start": "pnpm run build && node dist/bin/server.js",
     "start:dev": "tsx watch --inspect src/bin/server.ts | pnpm run pino:pretty",
+    "start:prod": "prisma migrate deploy && node -r source-map-support/register dist/bin/server.js",
     "test": "pnpm run build && pnpm run lint"
   },
   "dependencies": {
@@ -70,6 +71,7 @@
     "i18next": "^23.5.1",
     "luxon": "^3.4.3",
     "pino": "^8.15.6",
+    "prisma": "^5.4.1",
     "source-map-support": "^0.5.21",
     "ts-app-env": "^1.5.0"
   },
@@ -101,7 +103,6 @@
     "prettier-plugin-jsdoc": "^1.0.5",
     "prettier-plugin-packagejson": "^2.4.6",
     "prettier-plugin-prisma": "^5.0.0",
-    "prisma": "^5.4.1",
     "prisma-erd-generator": "^1.11.1",
     "semantic-release": "^22.0.5",
     "semantic-release-helm3": "^2.9.3",
