@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/SkeLLLa/mr-poke/compare/v1.1.0...v1.1.1) (2023-10-07)
+
+
+### 🛠 Fixes
+
+* prisma generate ([606b0e5](https://github.com/SkeLLLa/mr-poke/commit/606b0e5ff7ff547e05c3f66fea18f0170a8d7634))
+
 ## [1.1.0](https://github.com/SkeLLLa/mr-poke/compare/v1.0.14...v1.1.0) (2023-10-07)
 
 
