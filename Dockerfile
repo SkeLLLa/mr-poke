@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.4
-FROM node:lts
+FROM node:18
 
 WORKDIR /opt/service
 COPY . .
