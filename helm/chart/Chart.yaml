@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v2
 name: mr-poke
 description: Gitlab Slack MR notifications service
 type: application
