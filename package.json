@@ -1,6 +1,6 @@
 {
   "name": "mr-poke",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Self-hosted service for slack gitlab notifications.",
   "keywords": [
     "gitlab",

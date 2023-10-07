@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/SkeLLLa/mr-poke/compare/v1.0.12...v1.0.13) (2023-10-07)
+
+
+### 🛠 Fixes
+
+* chart api version ([575c3aa](https://github.com/SkeLLLa/mr-poke/commit/575c3aac35a2e4bc328008e8f7932d16e357b175))
+
 ## [1.0.12](https://github.com/SkeLLLa/mr-poke/compare/v1.0.11...v1.0.12) (2023-10-07)
 
 
