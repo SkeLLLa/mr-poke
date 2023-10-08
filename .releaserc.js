@@ -5,7 +5,7 @@ module.exports = {
     require('./.release/release-notes'),
     require('./.release/changelog'),
     // require('./.release/npm-change-version'),
-    require('./.release/npm'),
+    require('./.release/npm-publish'),
     require('./.release/docker'),
     require('./.release/helm'),
     require('./.release/git'),
