@@ -1,3 +1,20 @@
+## [1.2.0](https://github.com/SkeLLLa/mr-poke/compare/v1.1.4...v1.2.0) (2023-10-08)
+
+
+### 🛠 Fixes
+
+* npm publish ([504fb46](https://github.com/SkeLLLa/mr-poke/commit/504fb466b606390860f3a8b2eb1b22403e920c77))
+
+
+### 🚀 Features
+
+* release to npm ([497b5dc](https://github.com/SkeLLLa/mr-poke/commit/497b5dc4e5d1e47fea060adee11e9e4f6cf831df))
+
+
+### 📔 Docs
+
+* add setup instructions ([93cbd6f](https://github.com/SkeLLLa/mr-poke/commit/93cbd6f6b3bd2905693f7c63e7696786d5a646c3))
+
 ## [1.1.4](https://github.com/SkeLLLa/mr-poke/compare/v1.1.3...v1.1.4) (2023-10-07)
 
 
