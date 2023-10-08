@@ -4,3 +4,4 @@
 helm
 src
 **/*.xxx.*
+.*
