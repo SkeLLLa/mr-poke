@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/SkeLLLa/mr-poke/compare/v1.2.0...v1.2.1) (2023-10-23)
+
+
+### 🧾 Other
+
+* update npmignore ([29ee518](https://github.com/SkeLLLa/mr-poke/commit/29ee518453ca4a231ff74967f253c2df37136c09))
+
 ## [1.2.0](https://github.com/SkeLLLa/mr-poke/compare/v1.1.4...v1.2.0) (2023-10-08)
 
 
